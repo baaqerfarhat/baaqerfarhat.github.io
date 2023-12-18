@@ -33,9 +33,56 @@
 
   <main>
 
-    <!--
-      - #SIDEBAR
-    -->
+    <aside class="" data-sidebar>
+
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Back Arrow Button</title>
+          <style>
+              .back-arrow-container {
+                  position: sticky; /* Stick to the top when page scrolls */
+                  top: 20px; /* Distance from the top of the viewport when it becomes sticky */
+                  z-index: 1000; /* Ensure it's above other elements */
+              }
+      
+              .back-arrow-button {
+                  display: inline-flex;
+                  align-items: center;
+                  background-color: #555;
+                  color: #fff;
+                  border: none;
+                  cursor: pointer;
+                  font-size: 16px;
+                  padding: 10px 20px;
+                  border-radius: 30px; /* Rounded border */
+                  transition: background-color 0.3s ease;
+                  text-decoration: none; /* In case you want to use an <a> element */
+              }
+              
+              .back-arrow-button::before {
+                  content: '⟵'; /* Using a Unicode arrow symbol */
+                  margin-right: 8px; /* Space between arrow and text */
+                  font-size: 18px; /* Sizing the arrow */
+              }
+              
+              .back-arrow-button:hover {
+                  background-color: #666;
+              }
+          </style>
+      </head>
+      <body>
+      
+      <div class="back-arrow-container">
+          <a href="https://baaqerfarhat.github.io" class="back-arrow-button">Go Back</a>
+      </div>
+      
+      </body>
+      
+
+
+    </aside>
 
     
 
@@ -149,7 +196,7 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Circiut Analysis</h4>
+                <h4 class="h4 service-item-title">Circuit Analysis</h4>
 
                 <p class="service-item-text">
           </p>

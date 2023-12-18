@@ -470,9 +470,12 @@ main {
 
 .social-item .social-link:hover { color: var(--light-gray); }
 
-
-
-
+.youtube {
+  width: 800px;
+  height: 500px;
+  padding-left: 100px;
+  border-color: rgba(111,111,111,0.2) transparent transparent;
+  border-style: solid;}
 
 /*-----------------------------------*\
   #NAVBAR
@@ -986,6 +989,14 @@ main {
 
 }
 
+.project-imgPORTFOLIOS {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  padding-bottom: 25px;
+
+}
 
 
 .project-img {
@@ -1329,6 +1340,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 13px;
   }
 
+
   .article-title {
     font-weight: var(--fw-600);
     padding-bottom: 15px;
@@ -1368,9 +1380,23 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 30px;
   }
 
+
+
   .sidebar.active { max-height: 584px; }
 
   .sidebar-info { gap: 25px; }
+
+
+  .sidebar-infos {
+    
+    padding: 20px; /* Padding inside the sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  
+  }
+
 
   .avatar-box { border-radius: 30px; }
 
