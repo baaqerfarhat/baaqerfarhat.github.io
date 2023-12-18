@@ -229,6 +229,11 @@ article.active {
 
 .resume2 {
   padding-top: 10px;
+  
+}
+
+.pdf-embed{
+  padding-bottom: 20px;
 }
 
 .h2,
@@ -454,6 +459,14 @@ main {
   font-size: 18px;
 }
 
+.social-itemPORTFOLIO .social-link {
+  color: var(--light-gray-70);
+  font-size: 50px;
+  padding-bottom: 15px;
+  margin-left: 45%;
+  margin-right: auto;
+
+}
 
 .social-item .social-link:hover { color: var(--light-gray); }
 
@@ -963,6 +976,17 @@ main {
 }
 
 .project-item > a { width: 100%; }
+
+.project-imgPORTFOLIO {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-bottom: 25px;
+
+}
+
+
 
 .project-img {
   position: relative;
