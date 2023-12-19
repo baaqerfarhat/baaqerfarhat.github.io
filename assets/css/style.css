@@ -1093,6 +1093,26 @@ main {
 }
 
 
+.gallery-imagePRO{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the images if needed */
+  margin: 20px 0; /* Add some space above and below the gallery */
+  height: 397px;
+  width: 210px;
+}
+
+.gallery-imagePROS{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the images if needed */
+  margin: 20px 0; /* Add some space above and below the gallery */
+  height: 397px;
+  width: 250px;
+}
+
 .gallery-image222{
 
   display: flex;
