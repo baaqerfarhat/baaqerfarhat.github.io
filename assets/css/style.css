@@ -1072,7 +1072,65 @@ main {
   font-weight: var(--fw-300);
 }
 
+.image-gallerys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the images if needed */
+  margin: 20px 0; /* Add some space above and below the gallery */
+  height: 335px;
+  width: 250px;
+}
 
+.image-gallery2s{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the images if needed */
+  margin: 20px 0; /* Add some space above and below the gallery */
+  height: 335px;
+  width: 200px;
+}
+
+
+.gallery-image222{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the images if needed */
+  margin: 20px 0; /* Add some space above and below the gallery */
+  height: 335px;
+  width: 300px;
+
+
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the images if needed */
+  margin: 20px 0; /* Add some space above and below the gallery */
+}
+
+.gallery-image {
+  width: calc(33.333% - 10px); /* Adjust the width minus the gap */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* If you want to ensure the gallery is responsive and images don't get too small */
+@media (max-width: 768px) {
+  .gallery-image {
+    width: calc(50% - 10px); /* Show two images per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-image {
+    width: 100%; /* Stack images vertically on very small screens */
+  }
+}
 
 
 
