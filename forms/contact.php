@@ -1,41 +1,45 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+// Replace with your real receiving email address
+$receiving_email_address = 'baaqerfarhat@gmail.com';
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+  // Sanitize and validate the input
+  $name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
+  $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+  $subject = filter_var(trim($_POST['subject']), FILTER_SANITIZE_STRING);
+  $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
+
+  // Validate the required fields
+  if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+    die("Please fill out all fields.");
   }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die("Invalid email format.");
+  }
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+  // Email content
+  $email_subject = "New Contact Form Submission: $subject";
+  $email_body = "You have received a new message from your website contact form:\n\n";
+  $email_body .= "Name: $name\n";
+  $email_body .= "Email: $email\n";
+  $email_body .= "Subject: $subject\n";
+  $email_body .= "Message:\n$message\n";
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+  // Email headers
+  $headers = "From: $name <$email>\r\n";
+  $headers .= "Reply-To: $email\r\n";
 
-  echo $contact->send();
+  // Send the email
+  if (mail($receiving_email_address, $email_subject, $email_body, $headers)) {
+    echo "Your message has been sent successfully!";
+  } else {
+    echo "Sorry, your message could not be sent. Please try again later.";
+  }
+
+} else {
+  die("Invalid request method.");
+}
 ?>
